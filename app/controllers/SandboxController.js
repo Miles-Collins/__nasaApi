@@ -13,8 +13,8 @@ function _drawFavorites() {
 
 export class SandboxController {
   constructor() {
-    AppState.on('favorites', _drawFavorites)
     AppState.on('account', this.getMyFavorites)
+    AppState.on('favorites', _drawFavorites)
   }
 
   async favorite() {
@@ -34,4 +34,20 @@ export class SandboxController {
       Pop.error(('[ERROR]'), error.message)
     }
   }
+
+  async removeFavorite(favoriteId) {
+    try {
+      const yes = await Pop.confirm('Are you sure you want to remove this Favorite?')
+
+      if(!yes) {
+        return
+      }
+      await sandBoxService.removeFavorite(favoriteId)
+    } catch (error) {
+      logger.error('[ERROR]',error)
+      Pop.error(('[ERROR]'), error.message)
+    }
+  }
+
+  
 }

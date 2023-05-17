@@ -13,6 +13,10 @@ body {
 .pictureTitle:hover + .pictureDescription {
   visibility: visible;
   opacity: 1;
+  border: 1px solid rgba(255, 255, 255, 0.727);
+  border-radius: 5px;
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .detailText {
@@ -20,6 +24,12 @@ body {
 }
 
 .imgHeight {
-  height: 33%;
-  width: 33%;
+  height: 17.5dvh;
+  width: 100%;
 }
+
+.mainHeight {
+  height: 75dvh;
+}
+
+

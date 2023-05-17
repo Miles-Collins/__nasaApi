@@ -10,12 +10,12 @@ export class NasaPicture {
   get DetailsTemplate() {
     return `
       <div class="col-12 col-md-6 text-end detailText">
-        <div class="pictureTitle">
+        <div class="pictureTitle backdrop p-1">
           <h1>${this.title}</h1>
           <h2>${this.date}</h2>
         </div>
-        <div class="pictureDescription">
-          <p>${this.description}</p>
+        <div class="pictureDescription backdrop">
+          <p class="p-3">${this.description}</p>
         </div>
       </div>
     `

@@ -16,15 +16,20 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-      <a class="navbar-brand" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
+  <header class="container-fluid">
+    <div class="row detailText text-light align-items-center">
+      <!-- <a class="navbar-brand" href="#">
+        <img src="" height="45" alt=""
           loading="lazy">
         <span class="ml-2"></span>
-      </a>
-      <input id="date" class="form-control w-25" min="1995-06-16" name="date" type="date" onchange="app.NasaController.getDate()">
-      <button class="btn" title="Favorite Picture?" onclick="app.sandboxController.favorite()"><i class="mdi text-light fs-1 mdi-star-plus-outline"></i></button>
+      </a> -->
+      <div class="col-1">
+      <input id="date" class="form-control" min="1995-06-16" name="date" type="date" onchange="app.NasaController.getDate()">
+      </div>
+      <div class="col-1">
+         <div class="" title="Favorite Picture?" onclick="app.sandboxController.favorite()"><i class="selectable mdi detailText fs-1 text-light mdi-star-plus-outline"></i></div>
+      </div>
+      <div class="col-10 d-flex align-items-center">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,11 +41,11 @@
         </div> -->
       </div>
       <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
-      
-    </nav>
+      </div>
+    </div>
   </header>
 
-  <main class="container">
+  <main class="container mainHeight align-items-center d-flex">
 
     <div id="picture" class="row text-light justify-content-center mt-5">
       <!-- <div class="col-6 text-end">
@@ -52,22 +57,32 @@
 
 </main>
 
-  <footer class="container-fluid bg-dark">
-    <button class="btn fs-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="text-light mdi mdi-dots-horizontal-circle"></i></button>
+<div class="container-fluid">
+<div class="row" id="author">
+  <!-- <div class="col-4">
+    <h1>Author: ${this.author}</h1>
+  </div> -->
+</div>
+</div>
 
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title text-black" id="offcanvasBottomLabel">Favorite</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div id="favoritePictures" class="offcanvas-body small row">
-    <!-- <div>
-      <img class="imgHeight" src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80" alt="">
-      <h5>Space Photo</h5>
-    </div> -->
+<!-- SECTION OFF-CANVAS -->
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-1">
+      <div class="fs-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="selectable text-light detailText mdi mdi-arrow-collapse-up"></i></div>
+    </div>
   </div>
 </div>
-  </footer>
+
+  <div class="offcanvas offcanvas-bottom show text-bg-dark" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+  <div class="offcanvas-header justify-content-center">
+    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Favorites</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div id="favoritePictures" class="offcanvas-body mx-auto row justify-content-evenly">
+  </div>
+</div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>

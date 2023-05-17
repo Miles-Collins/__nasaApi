@@ -21,13 +21,18 @@ export class NasaController {
     this.getAll()
   }
 
-  async getDate() {
+  async getDate(date) {
     try {
+      if(!date) {
       console.log('getting date')
       let dateElem = document.getElementById('date')
       console.log(dateElem.value)
       let dateData = dateElem.value
       await nasaService.gettingDate(dateData)
+      } else {
+        console.log('[GETTING DATE]', date);
+        await nasaService.gettingDate(date)
+      }
     } catch (error) {
       logger.error('[ERROR]',error)
       Pop.error(('[ERROR]'), error.message)

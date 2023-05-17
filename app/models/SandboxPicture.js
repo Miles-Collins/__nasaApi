@@ -8,9 +8,18 @@ export class SandboxPicture{
 
   get FavoritePicture() {
     return `
-      <div onclick="app.sandboxController.setActive(${this.date})" class="col-4">
-      <img class="img-fluid mt-2" src="${this.imgUrl}" alt="">
-    </div>
+      <div  class="col-2 mt-2 position-relative">
+        <img onclick="app.NasaController.getDate('${this.date}')" class="imgHeight selectable mt-2 rounded" src="${this.imgUrl}" alt="">
+        <button onclick="app.sandboxController.removeFavorite('${this.id}')" title="Remove Favorite" class="btn btn-danger mt-1 position-absolute top-0 start-0"><i class="mdi mdi-close-outline"></i></button>
+      </div>
+    `
+  }
+
+  get  FavoriteAuthor() {
+    return `
+    <div class="col-4">
+    <h1>Author: ${this.author}</h1>
+  </div>
     `
   }
 }
