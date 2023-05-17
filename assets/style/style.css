@@ -1,0 +1,25 @@
+/* BASIC STYLES HERE */
+body {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pictureDescription {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.pictureTitle:hover + .pictureDescription {
+  visibility: visible;
+  opacity: 1;
+}
+
+.detailText {
+  text-shadow: 0px 0px 5px black;
+}
+
+.imgHeight {
+  height: 33%;
+  width: 33%;
+}
